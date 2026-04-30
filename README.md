@@ -54,9 +54,9 @@ The work in this repo focuses on:
 |Week 2|Fri 3/20/26|Thu 3/26/26|Deploy VM with `supera.sh` and verify with gate script|Completed / Review|
 |Week 3|Fri 3/27/26|Thu 4/2/26|Udemy labs, Terraform workflow screenshots|Completed / Review|
 |Week 4|Fri 4/3/26|Thu 4/9/26|Time off granted|N/A|
-|Week 5|Fri 4/10/26|Thu 4/16/26|Terraform IVPAD workflow, screenshots, GitHub push|In Progress / Review|
+|Week 5|Fri 4/10/26|Thu 4/16/26|Terraform IVPAD workflow, screenshots, GitHub push|Completed / Review|
 |Week 6|Fri 4/17/26|Thu 4/23/26|Catch up and continue Packt reading|Catch Up|
-|Week 7|Fri 4/24/26|Thu 4/30/26|Terraform + GCP VPC + local file resource|Upcoming / In Progress|
+|Week 7|Fri 4/24/26|Thu 4/30/26|Terraform + GCP VPC + local file resource|In Progress|
 |Week 8|Fri 5/1/26|Thu 5/7/26|Instance groups, load balancing, architecture|Upcoming|
 |Week 9|Fri 5/8/26|Thu 5/14/26|Pending|Pending|
 |Week 10|Fri 5/15/26|Thu 5/21/26|Pending|Pending|
