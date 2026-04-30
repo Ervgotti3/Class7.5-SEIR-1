@@ -1,142 +1,415 @@
-# Class7.5-SEIR-1
+# Class 7.5 SEIR-1 — Homework \& Lab Tracker
 
+!\[Terraform](https://img.shields.io/badge/Terraform-IaC-blueviolet?logo=terraform)
+!\[Google Cloud](https://img.shields.io/badge/Google%20Cloud-GCP-4285F4?logo=googlecloud\&logoColor=white)
+!\[GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)
+!\[Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
 
+## Overview
 
-Systems Engineering \& Identity Responsibility (SEIR-I)
+This repository tracks homework, lab work, Terraform practice, Google Cloud Platform exercises, screenshots, and supporting notes for **Class 7.5 SEIR-1**.
 
+The work in this repo focuses on:
 
+* Terraform fundamentals and workflow practice
+* Google Cloud Platform infrastructure deployments
+* Git and GitHub repository management
+* Linux command-line practice
+* Documentation, screenshots, and lab deliverables
 
-A 1.5-Year Applied Program in Cloud Infrastructure, Identity, and Federated Trust
+\---
 
+## Quick Navigation
 
+|Section|Description|
+|-|-|
+|[Weekly Assignment Timeline](#weekly-assignment-timeline)|High-level overview of each assigned week|
+|[Terraform IVPAD Workflow](#terraform-ivpad-workflow)|Terraform init, validate, plan, apply, destroy|
+|[Week 5 Deliverables](#week-5-deliverables)|Week 5 screenshot and GitHub submission requirements|
+|[Week 7 Deliverables](#week-7-deliverables)|GCP VPC, local file, output block, and README requirements|
+|[Week 7 Be A Man Lab](#week-7-be-a-man-lab)|Static website POC using GCS|
+|[Week 8 Study Topics](#week-8-study-topics)|Instance groups, load balancing, and architecture links|
 
-Infrastructure decides what can exist. Identity decides who is trusted. This program teaches both — responsibly.
+\---
 
+## Repository Structure
 
+> Update this section as folders/files are added.
 
-2️⃣ Program Length
+```text
+.
+├── README.md
+├── infra/                  # Terraform configuration files
+│   ├── provider.tf
+│   ├── vpc.tf
+│   ├── local\_file.tf
+│   ├── outputs.tf
+│   └── .gitignore
+├── screenshots/            # Terraform workflow screenshots
+└── notes/                  # Study notes or command references
+```
 
+\---
 
+## Weekly Assignment Timeline
 
-18 months (1.5 years) Designed as an apprenticeship-style program, not a sprint. Identity systems take time to understand because mistakes are irreversible.
+|Week|Assigned|Due|Main Focus|Status|
+|-|-:|-:|-|-|
+|Week 1|Fri 3/13/26|Thu 3/19/26|Group setup and install document|Completed / Review|
+|Week 2|Fri 3/20/26|Thu 3/26/26|Deploy VM with `supera.sh` and verify with gate script|Completed / Review|
+|Week 3|Fri 3/27/26|Thu 4/2/26|Udemy labs, Terraform workflow screenshots|Completed / Review|
+|Week 4|Fri 4/3/26|Thu 4/9/26|Time off granted|N/A|
+|Week 5|Fri 4/10/26|Thu 4/16/26|Terraform IVPAD workflow, screenshots, GitHub push|In Progress / Review|
+|Week 6|Fri 4/17/26|Thu 4/23/26|Catch up and continue Packt reading|Catch Up|
+|Week 7|Fri 4/24/26|Thu 4/30/26|Terraform + GCP VPC + local file resource|Upcoming / In Progress|
+|Week 8|Fri 5/1/26|Thu 5/7/26|Instance groups, load balancing, architecture|Upcoming|
+|Week 9|Fri 5/8/26|Thu 5/14/26|Pending|Pending|
+|Week 10|Fri 5/15/26|Thu 5/21/26|Pending|Pending|
+|Week 11|Fri 5/22/26|Thu 5/28/26|Pending|Pending|
+|Week 12|Fri 5/29/26|Thu 6/4/26|Pending|Pending|
 
+\---
 
+## Terraform IVPAD Workflow
 
-Systems Engineering \& Identity Responsibility (SEIR-I) is a 18 month applied program focused on how identity, access, and trust are designed and operated in modern cloud environments. While many programs treat identity as a configuration detail, this program treats identity as a primary system of responsibility. Students learn how access is granted, extended, audited, and recovered across cloud platforms.
+The Terraform workflow used throughout the assignments follows the **IVPAD** sequence:
 
+|Step|Command|Purpose|
+|-|-|-|
+|Init|`terraform init`|Initializes the working directory and downloads providers|
+|Validate|`terraform validate`|Checks whether the configuration syntax is valid|
+|Plan|`terraform plan`|Shows what Terraform will create, modify, or destroy|
+|Apply|`terraform apply`|Builds the infrastructure|
+|Destroy|`terraform destroy`|Tears down the infrastructure|
 
+After destroy, run:
 
-This program uses Google Cloud Platform (GCP) as the primary infrastructure environment, with Microsoft Entra ID (Azure Active Directory) as the identity authority. Students learn how identity is extended from Microsoft into GCP using federation, SSO, and modern authentication protocols. The emphasis is not on setup alone, but on understanding failure modes, blast radius, and recovery.
+```bash
+date \&\& hostname \&\& whoami
+```
 
+This confirms the system, user, and time after the resources have been removed.
 
+\---
 
-Students are trained to work with identity systems carefully and deliberately. Identity changes are slow by design, difficult to reverse, and often high impact. This program teaches how to reason about identity decisions before they are made, how to verify trust relationships, and how to debug access failures using evidence rather than guesswork.
+## Week 1 Assignment
 
+**Task:**  
+Get in a group and finish the installs document.
 
+\---
 
-Automation plays a central role. Students use PowerShell and infrastructure-as-code to manage identity and access at scale. They learn how to automate safely, how to log identity events, and how to produce audit-ready artifacts. AI tools are introduced as bounded assistants for analysis and summarization, never as decision makers.
+## Week 2 Assignment
 
+**Task:**  
+Deploy a VM instance using the `supera.sh` script.
 
+**Validation:**  
+Check successful deployment using the provided **gate** script.
 
-SEIR-I is designed for students who want to be trusted with systems that control access to people, data, and infrastructure. A college degree is not required. What matters is patience, consistency, and respect for responsibility. This program is not fast, not easy, and not casual — it is real.
+\---
 
+## Week 3 Assignment
 
+**Homework Document:**  
+Review `homework.md`.
 
-3️⃣ Summary of Skills to Be Learned This program focuses on who is allowed to do what, where, and why — across clouds.
+**Udemy Work:**
 
+* Masterclass: Section 10
+* Security: Section 13
 
+**Deliverables:**
 
-Core Cloud \& Infrastructure Skills Google Cloud Platform (GCP) infrastructure design Networking, compute, and platform services in GCP Infrastructure-as-Code with Terraform CI/CD and automation pipelines Evidence-based debugging and operational reasoning
+* Completed Udemy labs
+* Screenshots of the full Terraform workflow
 
+\---
 
+## Week 4 Assignment
 
-Identity \& Access Management (Primary Focus) Microsoft Entra ID (Azure Active Directory) architecture (Microsoft Azure Active Directory) Identity lifecycle management Extending identity from Microsoft to Google Cloud (Google Cloud Platform) Federation using SAML, OAuth, and OpenID Connect Single Sign-On (SSO) design and enforcement Cross-cloud trust boundaries Least privilege and blast-radius control
+**Status:**  
+N/A — Time off granted by Theo.
 
+**Reason:**  
+Birthday week and Illinois in NCAA Final Four.
 
+\---
 
-Automation \& Tooling PowerShell for identity and infrastructure automation Secure scripting practices Change control for identity systems Logging and audit artifacts for identity events
+## Week 5 Deliverables
 
+### Reading, Videos, and Labs
 
+**Udemy**
 
-AI (Used Correctly) Using AI (OpenAI) and Vertex as a bounded assistant AI for analysis and summarization, not authority Human-in-the-loop enforcement for identity decisions
+* Masterclass: Sections 5–6
 
+**Books**
 
+* Packt: Chapters 1–4 and Chapter 8
+* Terraform: Chapters 1–2
 
-4️⃣ Relevance to the Job Market
+**Linux**
 
+* TLCL: Chapters 1–4
+* KCLinux: Lessons 1–8
 
+**Git**
 
-Identity is no longer a side skill. It is the control plane of modern systems. This program prepares students for roles where trust, access, and failure matter.
+* LG: Chapters 1–3
+* KCG: Lessons 1–4
 
+\---
 
+### Class Practice
 
-Relevant Job Roles Identity \& Access Management (IAM) Engineer Cloud Identity Engineer Platform Engineer (Identity-focused) Security Engineer (IAM / Federation) Enterprise Systems Engineer Cloud Infrastructure Engineer with IAM ownership
+**Task:**  
+Re-run the in-class lab from Friday and Saturday’s recordings.
 
+**Requirement:**  
+Take screenshots throughout the Terraform IVPAD workflow showing the output of each command.
 
+### Required Screenshots
 
-Why This Skill Set Is in Demand Multi-cloud environments are now normal Identity failures cause the most expensive incidents Federation mistakes are hard to reverse Companies need engineers who understand trust, not just tools
+* \[ ] `terraform init`
+* \[ ] `terraform validate`
+* \[ ] `terraform plan`
+* \[ ] `terraform apply`
+* \[ ] `terraform destroy`
+* \[ ] `date \&\& hostname \&\& whoami`
 
+\---
 
+### Be A Man Extra Credit
 
-Graduates are trained to: design identity systems that scale debug access failures without panic explain identity risk to non-technical leadership operate under audit and compliance pressure
+**Task:**  
+Use the Terraform files from this week's classes.
 
+**Requirements:**
 
+* Export the Terraform plan output into a file
+* Create a new folder in Terminal/Git Bash named:
 
-These skills are rare and increasingly well-paid.
+```text
+<insertDateHere>\_weekB\_hw
+```
 
+* Move the Terraform plan output into that folder
+* Use Git to push the Terraform plan output to GitHub
+* The GitHub repository must start with:
 
+```text
+TheoU\_7.5\_BaM\_weekB
+```
 
-5️⃣ Description of Challenge Labs Engineered Difficulty for Identity Systems Identity labs are not demos. They are controlled encounters with risk.
+### Extra Credit Deliverables
 
+* \[ ] Same Terraform workflow screenshots listed above
+* \[ ] Terraform plan output in `.txt` or `.json` format
+* \[ ] Student GitHub repository link
 
+\---
 
-Challenge Lab Examples “The Lockout Lab” Automation succeeds. Access fails. Students must recover identity access without breaking trust boundaries.
+## Week 6 Assignment
 
+**Focus:**  
+Catch up on unfinished work.
 
+**Suggestion from Aaron:**  
+Keep reading daily in the PCA Packt book and make sure the prior week’s work is complete.
 
-Teaches: Recovery discipline Why identity changes must be slow and deliberate
+\---
 
+## Week 7 Deliverables
 
+### Readings, Videos, and Labs
 
-“Federation That Worked Yesterday” SSO breaks after a seemingly unrelated change. Students must prove where trust failed across clouds.
+**Udemy**
 
+* Terraform: Sections 1–4
 
+  * Speed through Section 1
+  * Terraform is already installed
+  * Service accounts, environment variables, and Cloud Shell are not used for authentication
+  * Authentication follows the method shown in video 25 for the Google provider
+* Terraform: Section 6
 
-Teaches: Federation fragility Evidence-based debugging Cross-team communication
+\---
 
+### Main Lab Requirement
 
+Create a new GitHub repository containing Terraform code.
 
-“Blast Radius of Identity” A permissions change works as intended — and exposes too much.
+**Repository requirements:**
 
+* New repository created by the student
+* README explaining:
 
+  * How the lab was completed
+  * Documentation used
+  * Resources used
+  * Issues encountered
+* Screenshot of successful Terraform deployment showing:
 
-Teaches: Least privilege Why identity errors are more dangerous than infrastructure errors
+  * Terraform output
+  * File created by Terraform
 
+\---
 
+### Terraform Requirements
 
-“AI Was Confident — and Wrong” AI summarizes identity risk incorrectly. Logs and audit trails disagree.
+Place the Terraform code in a folder named one of the following:
 
+* `infra`
+* `terraform`
+* Another similar folder name
 
+The Terraform code must include:
 
-Teaches: Human accountability Evidence over confidence Guardrails for AI use
+* \[ ] Google provider configuration using the latest provider version
+* \[ ] GCP VPC configuration using example code from the Terraform Registry
+* \[ ] No remote backend required
+* \[ ] `.gitignore` file included
+* \[ ] `local\_file` resource that creates a text file containing favorite food
+* \[ ] Output block showing the VPC name in GCP
 
+\---
 
+## Week 7 Be A Man Lab
 
-Midpoint Identity Suffering Week A structured sequence of identity failures: access denial federation breakage conditional access conflicts
+### Study Order
 
+Complete these in order:
 
+1. Masterclass: Section 7
+2. Security: Videos 31–33
+3. Terraform: Section 5
 
-With built-in recovery and reflection.
+\---
 
+### Lab Goal
 
+Deploy a proof-of-concept static website that is fully automated using:
 
-Teaches: Calm under pressure Respect for identity systems Professional judgment
+* Google Cloud Storage bucket
+* Sample static assets provided by the instructor
+* One image of your choice
+* Terraform automation
 
+\---
 
+### Be A Man Repository Requirements
 
-Optional: Relevant Certifications (Not Required, Not the Goal) Certifications are supporting tools, not outcomes. Students may optionally pursue: Microsoft SC-300 (Identity and Access Administrator) Microsoft AZ-104 (Azure Administrator) Google Professional Cloud Security Engineer Google Professional Cloud Architect
+The repository is the only item to submit.
 
+It must include:
 
+* \[ ] Repository description
+* \[ ] Terraform configuration files (`\*.tf`)
+* \[ ] Latest Google provider version
+* \[ ] Current code from the latest documentation where appropriate
+* \[ ] Comments written by the student
+* \[ ] README file checked into the repo
 
-These certifications align naturally with the curriculum but are not substitutes for judgment.
+\---
+
+### Be A Man README Requirements
+
+The README should include:
+
+* \[ ] Static website URL
+* \[ ] Explanation of what the lab is
+* \[ ] What the lab accomplishes
+* \[ ] Pros and cons
+* \[ ] Lessons learned
+* \[ ] Documentation used
+* \[ ] Any resources used
+* \[ ] Issues encountered
+* \[ ] Optional clickable bucket URL from Terraform output
+
+\---
+
+## Week 8 Study Topics
+
+### Udemy
+
+* Masterclass: Section 11
+* Terraform: Section 7
+
+### Books
+
+**Packt**
+
+* Review Chapter 4 on:
+
+  * Instance groups
+  * Templates
+  * Autohealing
+  * Autoscaling
+* Chapter 10
+
+**Terraform**
+
+* Chapters 3–4
+
+\---
+
+### Documentation
+
+#### Instance Groups
+
+* [Managed instance groups](https://docs.cloud.google.com/compute/docs/instance-groups#managed_instance_groups)
+* [Google Cloud instance groups overview](https://cloud.google.com/instance-groups?hl=en)
+
+#### Load Balancing
+
+* [Google Cloud Load Balancing](https://cloud.google.com/load-balancing?hl=en)
+* [Application Load Balancer documentation](https://docs.cloud.google.com/load-balancing/docs/application-load-balancer)
+* [HTTPS Load Balancing](https://docs.cloud.google.com/load-balancing/docs/https)
+* [Three-tier web services with Application Load Balancer](https://docs.cloud.google.com/load-balancing/docs/application-load-balancer#three-tier_web_services)
+* [Load Balancing on GCP: Why and How](https://levelup.gitconnected.com/load-balancing-on-google-cloud-platform-gcp-why-and-how-a8841d9b70c)
+
+#### Solutions Architecture
+
+* [Infrastructure reliability design guide](https://docs.cloud.google.com/architecture/infra-reliability-guide/design)
+
+\---
+
+## Pending Assignments
+
+|Week|Dates|Status|
+|-|-|-|
+|Week 9|Fri 5/8/26 – Thu 5/14/26|Pending|
+|Week 10|Fri 5/15/26 – Thu 5/21/26|Pending|
+|Week 11|Fri 5/22/26 – Thu 5/28/26|Pending|
+|Week 12|Fri 5/29/26 – Thu 6/4/26|Pending|
+
+\---
+
+## Notes
+
+* Keep screenshots organized by week.
+* Keep Terraform code in a clean folder structure.
+* Do not commit `.terraform/`, state files, or sensitive files.
+* Use meaningful commit messages.
+* Make sure each README section can be explained in your own words.
+
+\---
+
+## Example Git Commands
+
+```bash
+git status
+git add .
+git commit -m "Update homework README"
+git push -u origin main
+```
+
+\---
+
+## Author
+
+**Ervgotti3**
+
+GitHub: [Ervgotti3](https://github.com/Ervgotti3)
 
