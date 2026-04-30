@@ -1,10 +1,5 @@
 # Class 7.5 SEIR-1 — Homework \& Lab Tracker
 
-!\[Terraform](https://img.shields.io/badge/Terraform-IaC-blueviolet?logo=terraform)
-!\[Google Cloud](https://img.shields.io/badge/Google%20Cloud-GCP-4285F4?logo=googlecloud\&logoColor=white)
-!\[GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)
-!\[Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
-
 ## Overview
 
 This repository tracks homework, lab work, Terraform practice, Google Cloud Platform exercises, screenshots, and supporting notes for **Class 7.5 SEIR-1**.
