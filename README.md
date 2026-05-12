@@ -56,9 +56,9 @@ The work in this repo focuses on:
 |Week 4|Fri 4/3/26|Thu 4/9/26|Time off granted|N/A|
 |Week 5|Fri 4/10/26|Thu 4/16/26|Terraform IVPAD workflow, screenshots, GitHub push|Completed / Review|
 |Week 6|Fri 4/17/26|Thu 4/23/26|Catch up and continue Packt reading|Catch Up|
-|Week 7|Fri 4/24/26|Thu 4/30/26|Terraform + GCP VPC + local file resource|In Progress|
-|Week 8|Fri 5/1/26|Thu 5/7/26|Instance groups, load balancing, architecture|Upcoming|
-|Week 9|Fri 5/8/26|Thu 5/14/26|Pending|Pending|
+|Week 7|Fri 4/24/26|Thu 4/30/26|Terraform + GCP VPC + local file resource|Completed / Review|
+|Week 8|Fri 5/1/26|Thu 5/7/26|Instance groups, load balancing, architecture|In Progress|
+|Week 9|Fri 5/8/26|Thu 5/14/26|Pending|upcoming|
 |Week 10|Fri 5/15/26|Thu 5/21/26|Pending|Pending|
 |Week 11|Fri 5/22/26|Thu 5/28/26|Pending|Pending|
 |Week 12|Fri 5/29/26|Thu 6/4/26|Pending|Pending|
