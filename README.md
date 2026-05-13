@@ -31,6 +31,9 @@ The work in this repo focuses on:
 
 > Update this section as folders/files are added.
 
+## Repository Structure
+
+```text
 Week8/
 ├── README.md
 ├── Deliverables/
@@ -47,8 +50,7 @@ Week8/
 └── screenshots/
     ├── clickops-mig/
     └── terraform-vm/
-
-\---
+```
 
 ## Weekly Assignment Timeline
 
