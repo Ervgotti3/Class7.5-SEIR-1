@@ -20,12 +20,16 @@ resource "google_compute_instance" "week8_vpc" {
     access_config {}
   }
 
-  metadata_startup_script = <<-EOT
-    #!/bin/bash
-    set -e
+# This startup script will run when the VM is first created. 
+# It will b e installing software, configure the system, etc.
+ metadata_startup_script = file("./startup.sh")
 
-    curl -o /tmp/startup.sh https://raw.githubusercontent.com/aaron-dm-mcdonald/class7.5-notes/refs/heads/main/week-8/hw/startup-for-rhel.sh
-    chmod +x /tmp/startup.sh
-    bash /tmp/startup.sh
-  EOT
+
+ #metadata_startup_script = <<-EOT
+ #!/bin/bash
+ # set -e
+ #    curl -o /tmp/startup.sh https://raw.githubusercontent.com/aaron-dm-mcdonald/class7.5-notes/refs/heads/main/week-8/hw/startup-for-rhel.sh
+ #   chmod +x /tmp/startup.sh
+ #  bash /tmp/startup.sh
+ # EOT
 }
