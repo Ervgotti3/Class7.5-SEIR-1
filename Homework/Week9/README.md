@@ -296,9 +296,9 @@ Run these commands from inside the `terraform` directory:
 
 ```bash
 terraform init
-terraform fmt -recursive
+terraform fmt 
 terraform validate
-terraform apply
+terraform apply -auto-approve
 ```
 
 After testing, destroy the lab to avoid unnecessary charges:
