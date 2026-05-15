@@ -226,7 +226,87 @@ Before starting, the engineer should have the following ready:
 
 2\. Select Create a backend service.
 
-3\. Enter a backend service name such as:week9-web-backend
+3\. Enter a backend service name such as: week9-web-backend
+
+4. Set backend type to Instance group.
+
+5. Select the managed instance group created earlier.
+
+6. Set the named port to: http
+
+7. Attach the HTTP health check created earlier.
+
+8. Leave Cloud CDN disabled unless your group leader wants it enabled.
+
+9. Save the backend service.
 
 
+### 8. Configure Routing Rules
 
+1. Go to Routing rules.
+2. Use the default host and path rule unless the assignment requires multiple paths.
+3. Point the default route to the backend service created earlier.
+4. Save the routing rule.
+
+For a basic one-backend setup, all HTTP requests should route to the MIG backend.
+
+### 9. Configure the Frontend
+
+1. Go to Frontend configuration.
+2. Enter a frontend name such as: week9-http-frontend
+3. Set protocol to HTTP.
+4. Set port to 80.
+5. Select or create an external global IP address.
+6. Save the frontend configuration.
+
+### 10. Review and Create
+
+1. Review the backend, routing rule, frontend, and health check.
+2. Confirm the backend is the managed instance group.
+3. Confirm the health check is attached.
+4. Confirm frontend protocol is HTTP on port 80.
+5. Select Create.
+
+### Validation Steps
+1. Wait for the load balancer to finish provisioning.
+2. Open the load balancer details page.
+3. Confirm the backend status shows healthy.
+4. Copy the frontend IP address.
+5. Open a browser and test: http://LOAD_BALANCER_IP
+6. Confirm the web page loads successfully.
+7. If the page does not load, check the following:
+    - MIG instances are running
+    - Named port is set to http:80
+    - Health check is attached to the backend service
+    - Firewall rule allows TCP port 80 to the correct target tag
+    - Startup script installed and started the web server
+    - Backend instances are marked healthy
+
+### Partner Testing
+Tester Name:
+
+Date Tested:
+
+Result:
+
+Notes:
+
+Rollback / Cleanup
+
+To remove the ClickOps resources, delete them in this order:
+1. Load balancer frontend
+2. Target proxy / forwarding rule if listed separately
+3. URL map
+4. Backend service
+5. Health check
+6. Managed instance group
+7. Instance template
+8. Firewall rule
+9. Reserved external IP address, if it is no longer needed
+
+Deleting in this order helps avoid dependency errors.
+
+This covers the group-work requirement because it has the **runbook section**, **end goal**, **prerequisites**, **ClickOps steps**, **MIG backend**, **health check**, **key settings**, and **partner testing area**.
+
+Google’s external Application Load Balancer is a Layer 7 proxy-based load balancer that can distribute HTTP/HTTPS traffic to backends such as Compute Engine managed instance groups. Google’s setup docs also call out the MIG named port mapping, HTTP health checks, and the Google health check source ranges `130.211.0.0/22` and `35.191.0.0/16`. :contentReference[oaicite:0]{index=0}
+::contentReference[oaicite:1]{index=1}
