@@ -1,6 +1,11 @@
 # This file defines variables for the Week 9 Terraform lab. 
 # Variables allow us to easily customize our infrastructure by changing values in one place, 
 # rather than hardcoding them throughout our configuration files.
+variable "project_id" {
+  description = "The Google Cloud project ID where the vpc will be created."
+  type        = string
+  default     = "theowaf-class75-ervink"
+}
 
 variable "name_prefix" {
   description = "Prefix used for all Week 9 lab resources."

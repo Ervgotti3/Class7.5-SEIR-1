@@ -38,7 +38,7 @@ resource "google_compute_instance_template" "colombia" {
     # Cloud NAT provides outbound internet for package installation.
   }
 
-# The metadata startup script installs nginx and creates simple static pages for testing the load balancer.
+  # The metadata startup script installs nginx and creates simple static pages for testing the load balancer.
   metadata_startup_script = <<-EOT
     #!/bin/bash
     set -euxo pipefail
@@ -122,7 +122,7 @@ resource "google_compute_instance_template" "thailand" {
     # Cloud NAT provides outbound internet for package installation.
   }
 
-# The metadata startup script installs nginx and creates simple static pages for testing the load balancer.
+  # The metadata startup script installs nginx and creates simple static pages for testing the load balancer.
   metadata_startup_script = <<-EOT
     #!/bin/bash
     set -euxo pipefail

@@ -298,6 +298,7 @@ Run these commands from inside the `terraform` directory:
 terraform init
 terraform fmt 
 terraform validate
+terrafrom plan
 terraform apply -auto-approve
 ```
 
