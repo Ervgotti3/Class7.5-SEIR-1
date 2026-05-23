@@ -81,22 +81,26 @@ I used the following documentation, videos, and background resources to complete
 - **Terraform Google Provider Documentation**  
   I used the Terraform provider documentation to verify resource arguments for VPC, subnet, firewall rules, instance templates, managed instance groups, health checks, global forwarding rules, target proxies, SSL certificates, Cloud DNS records, and outputs.
 
+### Q&A
 
-
-\## Q\&A
-
-
-
-\### DNS and SSL/TLS
-
-
-
+- **DNS and SSL/TLS**
 \#### Explain what the traceroute and dig commands do. Compare and contrast.
-
-
+traceroute and dig are both troubleshooting commands, but they are used for different problems.
+TRACERT (Trace Route), a command-line utility that you can use to trace the path that an Internet Protocol (IP) packet takes to its destination.
+Digs, does a DNS lookups and displays the answers that are returned from the queried name servers.
+The main difference is that dig checks name resolution, while traceroute checks the network path. 
+A domain can resolve correctly in DNS but still fail because of routing, firewall, or network path issues.
 
 \#### What are the 3 or 4 most common DNS records and what are their use cases?
+The most common DNS records are A, CNAME, MX, and TXT records.
 
+An A record maps a domain name to an IPv4 address. In cloud infrastructure, this is commonly used to point a domain to a public load balancer IP address.
+
+A CNAME record points one DNS name to another DNS name. For example, www.example.com could point to example.com or to another cloud service hostname.
+
+An MX record is used for email. It tells other mail servers where email for a domain should be delivered.
+
+A TXT record stores text values for a domain. TXT records are often used for domain verification, SPF, DKIM, and other security or ownership checks. Google Cloud’s DNS setup documentation shows common records such as A and CNAME records when configuring a domain in Cloud DNS.
 
 
 \#### Give an overview of the steps in a TLS handshake.
@@ -108,32 +112,32 @@ I used the following documentation, videos, and background resources to complete
 
 
 \#### What is a certificate authority?
+certificate authority, or CA, is a trusted organization that issues SSL/TLS certificates. The CA verifies that the person or organization requesting the certificate has control over the domain. After verification, the CA signs the certificate.
 
 
-
-\### Load Balancers
-
-
+- **Load Balancers**
 
 \#### How do application load balancers in GCP offload SSL? What part of the load balancer does this?
+In Google Cloud, an external Application Load Balancer can terminate HTTPS traffic at the frontend. This means the user connects to the load balancer using HTTPS, and the load balancer handles the SSL/TLS certificate and decryption process before forwarding traffic toward the backend.
 
+The main load balancer component involved is the target HTTPS proxy. The forwarding rule sends TCP port 443 traffic to the target HTTPS proxy. The target HTTPS proxy uses the SSL certificate and URL map to handle the HTTPS request and route it to the correct backend. Google’s documentation says that target HTTPS proxies use SSL certificates for HTTPS load balancing, and Google-managed certificates must be referenced by a target HTTPS proxy or target SSL proxy.
 
+This is called SSL offload because the backend VMs do not each need to manage the public SSL certificate for the original client connection. Instead, the load balancer handles the client-facing HTTPS connection.
 
 \#### Are there use cases to have in-flight encryption from the backend service to the backend itself?
+Yes. Some environments need encryption not only from the client to the load balancer, but also from the load balancer to the backend. This is common in environments with strict security, compliance, or data protection requirements.
 
 
-
-\### Cloud Domain/DNS
-
-
+- **Cloud Domain/DNS**
 
 \#### Can multiple domains end up pointing to the same load balancer?
-
-
+Yes. Multiple domains can point to the same load balancer.
+For example: jshaw7.com, www.jshaw7.com, and app.jshaw7.com can all resolve to the same load balancer IP address.
 
 \#### In the context of Cloud DNS, what are zones?
+In Cloud DNS, a zone is a container for DNS records that belong to a specific DNS namespace, such as jshaw7.com. A managed zone holds records for the same DNS name suffix, and a project can have multiple managed zones as long as each zone has a unique name
 
-
+Cloud DNS supports public and private zones. A public zone is visible from the internet, while a private zone is only visible from selected VPC networks.
 
 \## Terraform Notes
 
