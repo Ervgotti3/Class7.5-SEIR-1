@@ -179,5 +179,20 @@ http://jshaw7.com
 https://jshaw7.com
 
 ```text
-HTTP and HTTPS loaded successfully.
+HTTP access was successfully.
+HTTPS was not successful at at first test. The browser returned ERR_CONNECTION_CLOSED.
+Possible reason: Google-managed SSL certificates can take time to finish provisioning after the DNS A record is created and points to the load balancer IP. 
+
+managed:
+  domainStatus:
+    jshaw7.com: ACTIVE
+  domains:
+  - jshaw7.com
+  status: PROVISIONING
+name: week10-alb-managed-cert
+selfLink: https://www.googleapis.com/compute/v1/projects/theowaf-class75-ervink/global/sslCertificates/week10-alb-managed-cert
+type: MANAGED
+
 ** Results: Domain pointed to the load balancer. HTTPS was configured using a Google-managed SSL certificate **
+** Status: PROVISIONING** - That means Google has validated the domain, but the managed certificate is still finishing provisioning. Give it more time. Once the overall status becomes ACTIVE, HTTPS should work. 40 mins passed and HTTPS access is succesful now.** 
+
