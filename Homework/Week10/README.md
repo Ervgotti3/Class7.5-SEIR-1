@@ -96,7 +96,7 @@ The most common DNS records are A, CNAME, MX, and TXT records.
 
 An A record maps a domain name to an IPv4 address. In cloud infrastructure, this is commonly used to point a domain to a public load balancer IP address.
 
-A CNAME record points one DNS name to another DNS name. For example, www.example.com could point to example.com or to another cloud service hostname.
+A CNAME record points one DNS name to another DNS name. For example, www.jshaw7.com could point to jshaw7.com or to another cloud service hostname.
 
 An MX record is used for email. It tells other mail servers where email for a domain should be delivered.
 
