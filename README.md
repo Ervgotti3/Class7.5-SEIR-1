@@ -85,7 +85,7 @@ The Terraform workflow used throughout the assignments follows the **IVPAD** seq
 |Init|`terraform init`|Initializes the working directory and downloads providers|
 |Validate|`terraform validate`|Checks whether the configuration syntax is valid|
 |Plan|`terraform plan`|Shows what Terraform will create, modify, or destroy|
-|Apply|`terraform apply`|Builds the infrastructure|
+|Apply|`terraform apply -auto-approve`|Builds the infrastructure|
 |Destroy|`terraform destroy`|Tears down the infrastructure|
 
 After destroy, run:
@@ -180,7 +180,7 @@ Take screenshots throughout the Terraform IVPAD workflow showing the output of e
 * \[ ] `terraform init`
 * \[ ] `terraform validate`
 * \[ ] `terraform plan`
-* \[ ] `terraform apply`
+* \[ ] `terraform apply -auto-approve`
 * \[ ] `terraform destroy`
 * \[ ] `date \&\& hostname \&\& whoami`
 
