@@ -24,6 +24,11 @@ The work in this repo focuses on:
 |[Week 7 Deliverables](#week-7-deliverables)|GCP VPC, local file, output block, and README requirements|
 |[Week 7 Be A Man Lab](#week-7-be-a-man-lab)|Static website POC using GCS|
 |[Week 8 Study Topics](#week-8-study-topics)|Instance groups, load balancing, and architecture links|
+|[Week 9 Deliverables](#week-9-deliverables--global-load-balancing-cloud-armor-and-cloud-cdn)|Cloud NAT, global load balancing, Cloud Armor, Cloud CDN, and Terraform ALB|
+|[Week 10 Deliverables](#week-10-deliverables--dns-ssltls-https-load-balancing-and-troubleshooting)|DNS, SSL/TLS, Cloud DNS, HTTPS load balancing, and troubleshooting|
+|[Week 11 Assignment](#week-11-assignment)|Pending Week 11 assignment section|
+|[Week 12 Assignment](#week-12-assignment)|Pending Week 12 assignment section|
+
 
 \---
 
@@ -64,8 +69,8 @@ Week8/
 |Week 6|Fri 4/17/26|Thu 4/23/26|Catch up and continue Packt reading|Catch Up|
 |Week 7|Fri 4/24/26|Thu 4/30/26|Terraform + GCP VPC + local file resource|Completed / Review|
 |Week 8|Fri 5/1/26|Thu 5/7/26|Instance groups, load balancing, architecture|Completed / Review|
-|Week 9|Fri 5/8/26|Thu 5/14/26|In Progress|
-|Week 10|Fri 5/15/26|Thu 5/21/26|Pending|Pending|
+|Week 9|Fri 5/8/26|Thu 5/14/26|Cloud NAT, Global load balancing, Cloud CDN|Completed / Review|
+|Week 10|Fri 5/15/26|Thu 5/15/26|DNS background, SSL/TLS background, Load Balancers, Cloud Domain/DNS|Completed / Review|
 |Week 11|Fri 5/22/26|Thu 5/28/26|Pending|Pending|
 |Week 12|Fri 5/29/26|Thu 6/4/26|Pending|Pending|
 
@@ -747,14 +752,365 @@ Recommended Terraform screenshots for this assignment:
 * [ ] Outputs include internal IP, external IP, name, ID, and self link
 * [ ] Final changes committed and pushed to GitHub
 
+## Week 9 Deliverables — Global Load Balancing, Cloud Armor, and Cloud CDN
+
+### Status
+
+**Completed / Review**
+
+### Readings, Videos, and Labs
+
+**Udemy**
+
+* Masterclass: Section 12
+* Security: Section 21
+
+**Books**
+
+* Packt: Chapter 5
+* Terraform: Chapters 5–6
+
+---
+
+### Documentation and Background Topics
+
+The Week 9 assignment focused on the following documentation and background areas:
+
+**Cloud NAT**
+
+* Private NAT / Google Cloud NAT documentation
+* Cloud NAT explained
+* Public and private subnet concepts in Google Cloud
+
+**Global Load Balancing**
+
+* Global external HTTPS load balancer setup
+* Deep dive on global external HTTPS load balancing
+
+**Cloud CDN**
+
+* CDN concepts
+* Google Cloud CDN product documentation
+* Cloud CDN overview and general documentation
+
+**Cloud Armor**
+
+* Web Application Firewall basics
+* Cloud Armor product overview
+* Cloud Armor documentation overview
+* Rate-based rules and Layer 7 protection concepts
+* reCAPTCHA and bot management concepts
+
+---
+
+### Assignment Requirements
+
+The Week 9 assignment required a README with documentation/resources used and a Q&A section written for a junior cloud infrastructure employee. The Q&A covered load balancing, Cloud Armor, and Cloud CDN concepts.
+
+### Q&A Topics
+
+**Load Balancers**
+
+* How load balancing contributes to fault tolerance and high availability
+* Whether global load balancers decrease latency for end users
+* What load balancer health checks are used for
+* Whether health checks are always needed
+* Difference between a load balancer and a reverse proxy
+* Routing rules and URL maps
+* Anycast IP addresses in global load balancing
+
+**Cloud Armor**
+
+* What Cloud Armor offers
+* Why Cloud Armor is used
+* What OSI layer Cloud Armor operates at
+* How Cloud Armor differs from VPC firewall rules
+* Rate-based rules
+* reCAPTCHA and bot management
+
+**Cloud CDN**
+
+* What POPs are used for
+* What files are commonly served through Cloud CDN
+* Supported Cloud CDN origins
+* How Cloud CDN can help reduce certain malicious traffic patterns
+* Whether an enterprise should always use Cloud CDN
+* TTL and content freshness
+
+---
+
+### Group Work — Runbook
+
+The group work required a runbook section for creating a fully configured external Application Load Balancer through ClickOps.
+
+The runbook covered:
+
+* End goal
+* Prerequisites
+* Creating an external Application Load Balancer
+* Using a managed instance group as the backend
+* Health check configuration
+* Backend service configuration
+* URL map and routing rules
+* Frontend configuration
+* Key settings and validation steps
+
+---
+
+### Terraform Requirements
+
+The Week 9 Terraform work required a `terraform/` subdirectory with normal Terraform best practices.
+
+Required items included:
+
+* `.gitignore`
+* No state files committed
+* No lock files committed
+* No `.terraform/` provider directory committed
+* Terraform code that can be cloned and run with `terraform init`, `terraform validate`, and `terraform apply`
+* Terraform block with version requirements
+* Google provider block
+* Numbered/logical file structure
+* Custom VPC
+* Firewall rules using target tags
+* Managed instance group
+* Health check
+* Global external Application Load Balancer
+* Informative outputs
+* Student-written comments and documentation
+
+---
+
+### Be A Man Tasks
+
+**Be A Man 1**
+
+Create a Terraform configuration to deploy an external global load balancer building on the Week 9 Terraform assignment.
+
+**Be A Man 2**
+
+Create two backend services named:
+
+* `colombia`
+* `thailand`
+
+Configure path-based routing so that:
+
+* `/colombia` routes to the Colombia backend
+* `/thailand` routes to the Thailand backend
+
+The deployment also considered Cloud CDN and relevant notes.
+
+---
+
+## Week 10 Deliverables — DNS, SSL/TLS, HTTPS Load Balancing, and Troubleshooting
+
+### Status
+
+**Completed / Review**
+
+### Readings, Videos, and Labs
+
+**Udemy**
+
+* Masterclass: Sections 7, 8, and 9
+* Security: Nothing assigned
+* Terraform: Section 12
+
+**Books**
+
+* Packt: Chapters 11–12
+* Terraform: Nothing assigned
+
+---
+
+### Documentation and Background Topics
+
+The Week 10 assignment focused on DNS, SSL/TLS, Cloud DNS, HTTPS load balancing, certificates, and troubleshooting.
+
+**DNS Background**
+
+* How DNS works
+* DNS records
+* Traceroute / tracert
+* What DNS is and how it supports internet communication
+
+**SSL/TLS Background**
+
+* SSL, TLS, HTTP, and HTTPS
+* HTTP vs. HTTPS
+* How SSL/TLS encryption works
+* TLS handshake concepts
+
+**Google Cloud Documentation**
+
+* Target proxies overview
+* SSL policies
+* SSL certificates
+* Managed TLS certificates for HTTP(S) load balancers
+* Cloud DNS overview
+* Certificate Manager overview
+* Encryption from the load balancer to the backend
+
+---
+
+### Assignment Requirements
+
+The Week 10 assignment required a README with documentation/resources used and a Q&A section written for a junior cloud infrastructure employee.
+
+### Q&A Topics
+
+**DNS and SSL/TLS**
+
+* Difference between `traceroute` and `dig`
+* Common DNS records and use cases
+* TLS handshake overview
+* How an SSL/TLS certificate knows which domain it belongs to
+* What a certificate authority is
+
+**Load Balancers**
+
+* How GCP Application Load Balancers offload/decrypt SSL
+* What part of the load balancer handles SSL offload
+* When in-flight encryption from the backend service to the backend may be needed
+
+**Cloud Domain/DNS**
+
+* Whether multiple domains can point to the same load balancer
+* What zones are in Cloud DNS
+
+---
+
+### Group Work — Anti-Drunk Engineer Runbook
+
+The Week 10 group work required a troubleshooting runbook for a broken Google Cloud VM environment.
+
+The broken environment was created with:
+
+```bash
+curl -s https://storage.googleapis.com/static-site-bucket-522479235074/broken-env-with-prechecks-v2.sh | bash
+```
+
+The troubleshooting runbook documented:
+
+* Initial symptoms
+* VM status checks
+* External IP checks
+* Firewall rule checks
+* Network tag checks
+* Route and VPC/subnet checks
+* SSH access troubleshooting
+* IAP SSH troubleshooting
+* Serial console logs
+* Web server status
+* Listening ports
+* Startup script behavior
+* Root cause
+* Resolution
+* Validation steps
+* Partner testing notes
+
+A support ticket was also created to document:
+
+* What was happening when the issue was first observed
+* Expected behavior
+* Troubleshooting performed
+* Root cause
+* Resolution
+* Reference to the anti-drunk engineer runbook
+
+---
+
+### Terraform Requirements
+
+The Week 10 Terraform work required a `terraform/` subdirectory following normal Terraform practices.
+
+Required items included:
+
+* `.gitignore`
+* VPC
+* Firewall rules
+* VM template
+* Health check
+* Managed instance group
+* Global Application Load Balancer using HTTP
+* Variables where appropriate
+* Locals
+* `terraform.tfvars`
+* Outputs
+* No committed state files
+* No committed provider binaries
+* No committed `.terraform/` directory
+
+---
+
+### Be A Man Tasks
+
+**Be A Man 1**
+
+Create a global external Application Load Balancer with Terraform.
+
+Additional requirements:
+
+* Create a frontend with HTTP and HTTPS
+* Configure certificate information
+* Use managed zone information
+* Consider using data sources
+
+**Be A Man 2**
+
+Create a global external Application Load Balancer with three backend buckets and path-based routing rules.
+
+This task was intentionally skipped.
+
+---
+
+## Week 11 Assignment
+
+### Status
+
+**Pending**
+
+Week 11 assignment details have not been added yet.
+
+Planned items to document when assigned:
+
+* Readings, videos, and labs
+* Documentation/resources used
+* README requirements
+* Q&A requirements
+* Terraform requirements
+* Runbook or troubleshooting requirements
+* Validation/testing notes
+* Final checklist
+
+---
+
+## Week 12 Assignment
+
+### Status
+
+**Pending**
+
+Week 12 assignment details have not been added yet.
+
+Planned items to document when assigned:
+
+* Readings, videos, and labs
+* Documentation/resources used
+* README requirements
+* Q&A requirements
+* Terraform requirements
+* Runbook or troubleshooting requirements
+* Validation/testing notes
+* Final checklist
+
 \---
 
 ## Pending Assignments
 
 |Week|Dates|Status|
 |-|-|-|
-|Week 9|Fri 5/8/26 – Thu 5/14/26|Pending|
-|Week 10|Fri 5/15/26 – Thu 5/21/26|Pending|
 |Week 11|Fri 5/22/26 – Thu 5/28/26|Pending|
 |Week 12|Fri 5/29/26 – Thu 6/4/26|Pending|
 
